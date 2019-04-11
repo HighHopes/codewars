@@ -44,5 +44,5 @@ def play_pass(s, n):
 	return "".join(lst)
 
 
-print(play_pass("I [**  LOVE YOU 1239!!!", 1))  # "!!!vPz fWpM J"
+print(play_pass("I [**  LOVE YOU 1239!!!", 1132))  # "!!!vPz fWpM J"
 print(play_pass("BORN IN 2015!", 1))  # "BORN IN 2015!
