@@ -5,13 +5,20 @@ If the user guess wrong it should lose a life and return false (if you guess cor
 If the user guess right it should return true"""
 
 
-class Guesser(object):
+class Guesser:
 	def __init__(self, number, lives):
 		self.number = number
 		self.lives = lives
 
 	def guess(self, n):
-		return False
+		if self.lives > 0:
+			if self.number == n:
+				return True
+			elif self.number != n:
+				self.lives -= 1
+				return False
+		else:
+			raise VallueError("Omae wa mo shindeiru")
 
 
 guesser = Guesser(10, 2)
