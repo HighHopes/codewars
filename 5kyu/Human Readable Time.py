@@ -7,11 +7,13 @@ The maximum time never exceeds 359999 (99:59:59)
 
 You can find some examples in the test fixtures."""
 
-from datetime import datetime
-
 
 def make_readable(seconds):
-    return "99:59:59" if seconds > 86399 else datetime.fromtimestamp(86399).strftime("%I:%M:%S")
+    hours = seconds // (60 * 60)
+    seconds %= (60 * 60)
+    minutes = seconds // 60
+    seconds %= 60
+    return "%02i:%02i:%02i" % (hours, minutes, seconds)
 
 
-print(make_readable(359999))
+print(make_readable(359998))
