@@ -1,14 +1,8 @@
-def loves(name1, name2):
-    names = (name1 + name2).replace(" ", "").lower()
-    print(names)
-    
-    result = ""
-    temp = ""
-    
-    for i in "loves":
-        result += str(names.count(i))
-    
+def factorial(number):
+    result = 1
+    for i in [i for i in range(1, number + 1)]:
+        result *= i
     return result
 
 
-print(loves("John Doe", "Jane Doe"))  # 66%
+print(factorial(0))
