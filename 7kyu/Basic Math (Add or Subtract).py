@@ -12,4 +12,4 @@ def calculate(s):
     return str(eval(s))
 
 
-print(calculate('1plus2plus3plus4'))
+print(calculate('1plus2plus3minus4'))
