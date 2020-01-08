@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def decode(r):
     num = int("".join([i for i in r if i.isdigit()]))
     strng = [i for i in r if i.isalpha()]
@@ -23,3 +24,6 @@ print(decode("6015ekx"))  # mer
 print(decode("1273409kuqhkoynvvknsdwljantzkpnmfgf"))  # uogbucwnddunktsjfanzlurnyxmx
 print(decode("5057aan"))  # Impossible to decode
 print(decode("761328qockcouoqmoayqwmkkic"))  # Impossible to decode
+=======
+print("say:", input(":"))
+>>>>>>> 7dd7ddd0a70fbeeeec2a29f6aad60c7bb48750a7
