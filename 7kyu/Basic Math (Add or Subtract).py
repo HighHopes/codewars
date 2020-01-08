@@ -7,4 +7,9 @@ Examples
 "1plus2plus3minus4" -->  "2" """
 
 def calculate(s):
-    pass
+    s = s.replace("plus", "+")
+    s = s.replace("minus", "-")
+    return str(eval(s))
+
+
+print(calculate('1plus2plus3plus4'))
