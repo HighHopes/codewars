@@ -7,3 +7,5 @@ Good luck :)"""
 
 def unusual_five():
     return ord("")
+
+print(unusual_five())
