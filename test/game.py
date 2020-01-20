@@ -9,7 +9,7 @@ class Warrior():
 
     def training(self, lst):
         if lst[2] <= self.level:
-            print(lst[0])
+            result = lst[0]
 
             self.experience += lst[1]
 
@@ -23,6 +23,8 @@ class Warrior():
             if len(str(self.level)) < 2: self.rank = self.ranks[0]
             elif len(str(self.level)) >= 3: self.rank = self.ranks[-1]
             else: self.rank = self.ranks[int(str(self.level)[0])]
+
+            return result
         else:
             print("Not strong enough")
 
@@ -33,7 +35,7 @@ print(loki.level)         # => 1
 print(loki.experience)    # => 100
 print(loki.rank)          # => "Pushover"
 print(loki.achievements)  # => []
-loki.training(["Defeated Chuck Norris", 123, 1]) # => "Defeated Chuck Norris"
+loki.training(["Defeated Chuck Norris", 9000, 1]) # => "Defeated Chuck Norris"
 print(loki.experience)    # => 9100
 print(loki.level)         # => 91
 print(loki.rank)          # => "Master"
