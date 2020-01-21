@@ -16,21 +16,19 @@ sum_dig_pow(1, 100) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 89]"""
 
 
 def sum_dig_pow(a, b):
-	sdp = []
-	for i in range(a, b):
-		print(i)
-		if i < 10:
-			sdp.append(i)
-		else:
-			po = 0
-			num = 0
-			for j in str(i):
-				num += int(j) ** po
-				po += 1
-				print(j, num, po)
-			print(num)
-
-	# return sdp
+    sdp = []
+    for i in range(a,b+1):
+        if i < 10:
+            sdp.append(i)
+        else:
+            pow = 0
+            num = 0
+            for j in str(i):
+                pow += 1
+                num += int(j) ** pow
+            if num == i:
+                sdp.append(i)
+    return sdp
 
 
-print(sum_dig_pow(95, 97))
+print(sum_dig_pow(1, 97))
