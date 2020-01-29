@@ -1,35 +1,24 @@
 import re
-def balance(book):
-    book = re.sub("[^A-Za-z0-9.\n ]+", "", book)
-    book = [i for i in book.split("\n") if i]
-    for i in range(len(book)):
-        book[i] = book[i].split()
-    return book
+
+def increment_string(strng):
+    if strng == "": return 1
+    if not strng[-1].isdigit(): return strng + "1"
+
+    match = re.match(r"([a-z]+)([0-9]+)", strng, re.I)
+
+    if match:
+        strng = match.groups()
+
+    strng = list(strng)
+
+    strng[1] = str(int(strng[1]) + 1).zfill(len(strng[1]))
+
+    return "".join(strng)
 
 
-
-b1 = """1000.00!=
-
-125 Market !=:125.45
-126 Hardware =34.95
-127 Video! 7.45
-128 Book :14.32
-129 Gasoline ::16.10
-"""
-
-b2="""1233.00
-125 Hardware;! 24.8?;
-123 Flowers 93.5
-127 Meat 120.90
-120 Picture 34.00
-124 Gasoline 11.00
-123 Photos;! 71.4?;
-122 Picture 93.5
-132 Tyres;! 19.00,?;
-129 Stamps 13.6
-129 Fruits{} 17.6
-129 Market;! 128.00?;
-121 Gasoline;! 13.6?;"""
-
-print(balance(b1))
-#print(balance(b2))
+print(increment_string("foo"))  # "foo1"
+print(increment_string("foobar0001"))  # "foobar002"
+print(increment_string("foobar1"))  # "foobar2"
+print(increment_string("foobar00"))  # "foobar01"
+print(increment_string("foobar99"))  # "foobar100"
+print(increment_string("foobar099"))  # "foobar100"
