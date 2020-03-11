@@ -20,13 +20,12 @@ def get_pins(observed):
     for i in observed:
         lst.append(dct.get(int(i)))
 
-    result = []
+    print(lst)
 
-    for i in range(len(lst[0])):
-        temp = ""
-        temp += str(lst[0][i])
-
-    print(temp)
+    for i in range(len(lst)):
+        print(lst[i], i)
+        for j in range(len(lst[i])):
+            print(lst[j][i])
 
     return None
 
